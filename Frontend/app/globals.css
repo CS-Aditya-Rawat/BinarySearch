@@ -16,15 +16,40 @@
 }
 
 :root.dark {
-  --bg: #0d1117;
-  --bg-elev: #161b22;
-  --text: #c9d1d9;
-  --muted: #8b949e;
-  --border: #30363d;
-  --accent: #2f81f7;
-  --success: #23b26d;
-  --warn: #f7c531;
-  --error: #f85149;
+  /* Gruvbox Dark Theme */
+  --bg: #282828;
+  --bg-elev: #3c3836;
+  --text: #ebdbb2;
+  --muted: #a89984;
+  --border: #504945;
+  --accent: #83a598;
+  --success: #b8bb26;
+  --warn: #fabd2f;
+  --error: #fb4934;
+  
+  /* Additional Gruvbox colors for extended usage */
+  --bg-hard: #1d2021;
+  --bg-soft: #32302f;
+  --bg0: #282828;
+  --bg1: #3c3836;
+  --bg2: #504945;
+  --bg3: #665c54;
+  --bg4: #7c6f64;
+  
+  --fg0: #fbf1c7;
+  --fg1: #ebdbb2;
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+  
+  --red: #fb4934;
+  --green: #b8bb26;
+  --yellow: #fabd2f;
+  --blue: #83a598;
+  --purple: #d3869b;
+  --aqua: #8ec07c;
+  --orange: #fe8019;
+  --gray: #928374;
 }
 
 @layer base {
@@ -48,6 +73,31 @@
   .text-muted {
     color: var(--muted);
   }
+  
+  /* Gruvbox specific utility classes */
+  .bg-gruvbox-hard { background-color: var(--bg-hard); }
+  .bg-gruvbox-soft { background-color: var(--bg-soft); }
+  .text-gruvbox-red { color: var(--red); }
+  .text-gruvbox-green { color: var(--green); }
+  .text-gruvbox-yellow { color: var(--yellow); }
+  .text-gruvbox-blue { color: var(--blue); }
+  .text-gruvbox-purple { color: var(--purple); }
+  .text-gruvbox-aqua { color: var(--aqua); }
+  .text-gruvbox-orange { color: var(--orange); }
+  
+  /* Enhanced code highlighting for Gruvbox */
+  .hljs {
+    background: var(--bg1) !important;
+    color: var(--fg1) !important;
+  }
+  
+  .hljs-keyword { color: var(--red) !important; }
+  .hljs-string { color: var(--green) !important; }
+  .hljs-number { color: var(--purple) !important; }
+  .hljs-comment { color: var(--gray) !important; }
+  .hljs-function { color: var(--yellow) !important; }
+  .hljs-variable { color: var(--blue) !important; }
+  .hljs-type { color: var(--aqua) !important; }
   
   .border-default {
     border-color: var(--border);

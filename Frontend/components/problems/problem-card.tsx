@@ -21,9 +21,9 @@ interface ProblemCardProps {
 }
 
 const difficultyColors = {
-  easy: 'bg-success text-white',
-  medium: 'bg-warn text-black',
-  hard: 'bg-error text-white',
+  easy: 'text-gruvbox-green border-[var(--green)] bg-[var(--green)]/10',
+  medium: 'text-gruvbox-yellow border-[var(--yellow)] bg-[var(--yellow)]/10',
+  hard: 'text-gruvbox-red border-[var(--red)] bg-[var(--red)]/10',
 };
 
 export function ProblemCard({ problem }: ProblemCardProps) {
@@ -46,7 +46,7 @@ export function ProblemCard({ problem }: ProblemCardProps) {
             
             <div className="flex flex-wrap gap-1">
               {problem.tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="text-xs">
+                <Badge key={tag} variant="secondary" className="text-xs text-[var(--aqua)] bg-[var(--aqua)]/10 border-[var(--aqua)]/20">
                   {tag}
                 </Badge>
               ))}

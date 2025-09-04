@@ -4,18 +4,21 @@ import { Code2, ExternalLink } from 'lucide-react';
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-default bg-elevated">
-      <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-        <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-          <Code2 className="h-6 w-6" />
-          <p className="text-center text-sm leading-loose text-muted md:text-left">
+    <footer className="border-t border-border bg-[--bg-elev]">
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-between gap-4 py-8 px-4 md:h-20 md:flex-row md:py-0">
+        <div className="flex flex-col items-center gap-3 md:flex-row md:gap-3">
+          <div className="flex items-center space-x-2">
+            <Code2 className="h-5 w-5 text-[--accent]" />
+            <span className="font-bold text-base">CodeRooms</span>
+          </div>
+          <p className="text-center text-sm text-[--muted] md:text-left">
             Built for collaborative coding. Open source and free to use.
           </p>
         </div>
-        <div className="flex items-center space-x-6 text-sm text-muted">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[--muted]">
           <Link 
             href="https://docs.coderooms.dev" 
-            className="flex items-center space-x-1 hover:text-accent transition-colors"
+            className="flex items-center space-x-1 hover:text-[--accent] transition-colors"
             target="_blank"
           >
             <span>Docs</span>
@@ -23,7 +26,7 @@ export function SiteFooter() {
           </Link>
           <Link 
             href="https://github.com/coderooms/platform" 
-            className="flex items-center space-x-1 hover:text-accent transition-colors"
+            className="flex items-center space-x-1 hover:text-[--accent] transition-colors"
             target="_blank"
           >
             <span>GitHub</span>
@@ -31,13 +34,13 @@ export function SiteFooter() {
           </Link>
           <Link 
             href="/roadmap" 
-            className="hover:text-accent transition-colors"
+            className="hover:text-[--accent] transition-colors"
           >
             Roadmap
           </Link>
           <Link 
             href="/license" 
-            className="hover:text-accent transition-colors"
+            className="hover:text-[--accent] transition-colors"
           >
             License
           </Link>

@@ -1,11 +1,14 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Play } from 'next/font/google';
 import { Providers } from '@/providers/providers';
 import { SiteHeader } from '@/components/shell/site-header';
 import { SiteFooter } from '@/components/shell/site-footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const play = Play({ 
+  weight: ['400', '700'],
+  subsets: ['latin'] 
+});
 
 export const metadata: Metadata = {
   title: 'CodeRooms - Real-Time Collaborative Coding',
@@ -19,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={play.className}>
         <Providers>
           <div className="min-h-screen flex flex-col">
             <SiteHeader />

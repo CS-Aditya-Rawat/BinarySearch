@@ -21,43 +21,51 @@ export function SiteHeader() {
   const { user, signOut } = useAuth();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-default bg-[--bg]/95 backdrop-blur supports-[backdrop-filter]:bg-[--bg]/60">
-      <div className="container flex h-14 items-center">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-[--bg]/95 backdrop-blur supports-[backdrop-filter]:bg-[--bg]/60">
+      <div className="max-w-7xl mx-auto flex h-14 items-center px-4">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Code2 className="h-6 w-6" />
-            <span className="hidden font-bold sm:inline-block">CodeRooms</span>
+            <Code2 className="h-6 w-6 text-[--accent]" />
+            <span className="hidden font-bold text-lg sm:inline-block">CodeRooms</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <Link
               href="/problems"
-              className="transition-colors hover:text-accent"
+              className="transition-colors hover:text-[--accent] text-[--muted] hover:text-[--text]"
             >
               Problems
             </Link>
             <Link
               href="/rooms"
-              className="transition-colors hover:text-accent"
+              className="transition-colors hover:text-[--accent] text-[--muted] hover:text-[--text]"
             >
               Rooms
             </Link>
             <Link
               href="/contests"
-              className="transition-colors hover:text-accent"
+              className="transition-colors hover:text-[--accent] text-[--muted] hover:text-[--text]"
             >
               Contests
             </Link>
           </nav>
         </div>
 
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
+        {/* Mobile logo */}
+        <div className="flex md:hidden">
+          <Link href="/" className="flex items-center space-x-2">
+            <Code2 className="h-6 w-6 text-[--accent]" />
+            <span className="font-bold text-lg">CodeRooms</span>
+          </Link>
+        </div>
+
+        <div className="flex flex-1 items-center justify-end space-x-3 ml-4">
+          <div className="hidden sm:flex w-auto flex-none">
             <div className="relative">
-              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted" />
+              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-[--muted]" />
               <Input
                 type="search"
                 placeholder="Search problems..."
-                className="w-full md:w-[200px] lg:w-[300px] pl-8"
+                className="w-[200px] lg:w-[300px] pl-8 h-9"
               />
             </div>
           </div>
@@ -66,7 +74,7 @@ export function SiteHeader() {
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                  <Button variant="ghost" className="relative h-9 w-9 rounded-full">
                     <Avatar className="h-8 w-8">
                       <AvatarImage src={user.avatar} alt={user.username} />
                       <AvatarFallback>{user.username?.[0]?.toUpperCase()}</AvatarFallback>
@@ -108,10 +116,10 @@ export function SiteHeader() {
               </DropdownMenu>
             ) : (
               <div className="flex items-center space-x-2">
-                <Button variant="ghost" asChild>
+                <Button variant="ghost" size="sm" asChild>
                   <Link href="/auth/sign-in">Sign in</Link>
                 </Button>
-                <Button asChild>
+                <Button size="sm" asChild>
                   <Link href="/auth/sign-up">Sign up</Link>
                 </Button>
               </div>
